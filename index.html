@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contoh Halaman Web</title>
+  <style>
+    .merah {
+      color: red;
+    }
+    .besar {
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="merah">Halo, dunia!</h1>
+  <p :class="{ besar: isBesar }">Ini adalah contoh halaman web.</p>
+  <input type="text" v-model="inputText">
+  <button @click="ubahNilai">Ubah Nilai</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: 'body',
+      data: {
+        isBesar: false,
+        inputText: ''
+      },
+      methods: {
+        ubahNilai: function() {
+          this.isBesar = !this.isBesar;
+        }
+      }
+    });
+  </script>
+</body>
+</html>
